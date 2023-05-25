@@ -4,6 +4,7 @@ import 'package:projet_jeu/Jeux.dart/Homejeux.dart';
 import 'package:projet_jeu/Jeux.dart/Menu.dart';
 
 
+
 class CreateGamePage extends StatefulWidget {
   @override
   _CreateGamePageState createState() => _CreateGamePageState();
@@ -67,7 +68,12 @@ class _CreateGamePageState extends State<CreateGamePage> {
         child: Column(
          
           children: [
-         
+         TextFormField(
+              controller: _wordController,
+              decoration: InputDecoration(
+                labelText: 'Nom du jeux',
+              ),
+            ),
             TextFormField(
               controller: _wordController,
               decoration: InputDecoration(
@@ -78,8 +84,12 @@ class _CreateGamePageState extends State<CreateGamePage> {
             TextFormField(
               controller: _imageController,
               decoration: InputDecoration(
-                labelText: 'URL de l\'image',
-              ),
+               
+            
+            label: Text('Camera'),
+          ),
+
+                
             ),
             SizedBox(height: 32.0),
             ElevatedButton(

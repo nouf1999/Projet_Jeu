@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:projet_jeu/Home.dart';
 import 'package:projet_jeu/Jeux.dart/Creer-jeux.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -10,7 +12,11 @@ class Login extends StatefulWidget {
 
 class _Login extends State<Login> {
   final _formKey = GlobalKey<FormState>();
-  String _username = '';
+
+
+
+
+String _username = '';
   String _password = '';
   
 
@@ -114,9 +120,5 @@ SizedBox(height: 16.0),
         ),
       ),
     );
-
-}
-}
-
-
-
+  }
+  }
