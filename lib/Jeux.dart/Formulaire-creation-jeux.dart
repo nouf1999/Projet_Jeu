@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_jeu/Jeux.dart/Game-cours.dart';
+import 'package:projet_jeu/Jeux.dart/Homejeux.dart';
 import 'package:projet_jeu/Jeux.dart/Menu.dart';
 
 
@@ -55,7 +56,8 @@ class _CreateGamePageState extends State<CreateGamePage> {
       appBar: AppBar(
           
         title: Text('Créer un nouveau jeu'),
-
+ 
+          
                   
       ),
       body: Padding(
@@ -63,7 +65,7 @@ class _CreateGamePageState extends State<CreateGamePage> {
           
         padding: EdgeInsets.all(16.0),
         child: Column(
-          
+         
           children: [
          
             TextFormField(
@@ -82,7 +84,7 @@ class _CreateGamePageState extends State<CreateGamePage> {
             SizedBox(height: 32.0),
             ElevatedButton(
               onPressed: (){
-               MaterialPageRoute(builder: (context) => CurrentGamesPage ());
+               Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homejeux()));
                  
               },
               child: Text('Créer le jeu'),

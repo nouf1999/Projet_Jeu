@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'Joindre-jeux.dart';
+import 'Menu.dart';
+
 class GameDetailsPage extends StatelessWidget {
   final String gameId;
 
@@ -15,11 +18,19 @@ class GameDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Détails du jeu'),
+
       ),
       body: Center(
-        child: Text('Détails du jeu $gameId'),
+         
+        //child: Text('Détails du jeu $gameId'),
+         child:  IconButton(
+          icon: Icon(Icons.person_add),
+          onPressed: () {
+Navigator.of(context).push(MaterialPageRoute(builder: (context) => JoinGamePage()));
+          }
+
         
       ),
-    );
+    ) );
   }
 }

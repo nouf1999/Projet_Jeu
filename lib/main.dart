@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:projet_jeu/Home.dart';
-import 'package:projet_jeu/View/Login.dart';
+import 'package:firebase_core/firebase_core.dart';
+/*import 'firebase_options.dart';
 
 
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}*/
 
 void main() {
   runApp(const MyApp());
@@ -22,16 +29,16 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:MyHomePage(title: 'My game'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   
 
+  
   final String title;
 
   @override
@@ -47,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         
-        title: Text(widget.title),
+        
        
       ),
       body: 
@@ -55,3 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
        );
         } 
         }
+
+        //
+        
+        

@@ -24,6 +24,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion flutter.compileSdkVersion
@@ -42,7 +43,19 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+   android {
     defaultConfig {
+        // ...
+        minSdkVersion 16
+        targetSdkVersion 28
+        multiDexEnabled true
+    }
+}
+
+
+dependencies {
+  implementation 'com.android.support:multidex:1.0.3'
+}
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.projet_jeu"
         // You can update the following values to match your application needs.

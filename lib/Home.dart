@@ -20,13 +20,15 @@ class Home extends StatelessWidget {
 Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login()));
     }, 
     child: 
-  Image.asset('assets/Image0.jpeg'),
-),
+  Image.asset('assets/Image0.jpeg'
+) ,
+  ),
 
  
 
     ),
-     ); 
+     );
+      
     
   }
 }
