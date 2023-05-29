@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:projet_jeu/Home.dart';
-import 'package:projet_jeu/Jeux.dart/Creer-jeux.dart';
+import 'package:projet_jeu/home.dart';
+import 'package:projet_jeu/Jeux/creer_jeux.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

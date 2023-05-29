@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet_jeu/View/Login.dart';
-
+import 'package:projet_jeu/Jeux/creer_jeux.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,23 +10,15 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text('Connexion'),
       ),
-    body: Center(
-
-      
-      child: 
-
-    ElevatedButton(onPressed:  () {
-Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login()));
-    }, 
-    child: 
-  Image.asset('assets/Image4.jpg'),
-  ),
-
- 
-
-    ),
-     );
-      
-    
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const Transition()));
+          },
+          child: Image.asset('assets/Image4.jpg'),
+        ),
+      ),
+    );
   }
 }

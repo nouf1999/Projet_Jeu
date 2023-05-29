@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:projet_jeu/Home.dart';
+import 'package:projet_jeu/home.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 /*import 'firebase_options.dart';
@@ -32,22 +30,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     
-       debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
       ),
-      home:MyHomePage(title: 'My game'),
+      home: const Home(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-  
 
-  
   final String title;
 
   @override
@@ -55,22 +49,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
-
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title)
-        
-       
-      ),
-      body: 
-      Home(),
-       );
-        } 
-        }
+      appBar: AppBar(title: Text(widget.title)),
+      body: Home(),
+    );
+  }
+}
 
         //
         

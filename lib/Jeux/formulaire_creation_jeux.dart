@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:projet_jeu/Jeux.dart/Game-cours.dart';
-import 'package:projet_jeu/Jeux.dart/Homejeux.dart';
-import 'package:projet_jeu/Jeux.dart/Menu.dart';
+import 'package:projet_jeu/Jeux/game_cours.dart';
+import 'package:projet_jeu/Jeux/homejeux.dart';
+import 'package:projet_jeu/Jeux/menu.dart';
 
 
 

@@ -27,8 +27,34 @@ class _CreateJeuxState extends State<CreateJeux> {
         } 
         }*/
 import 'package:flutter/material.dart';
-import 'package:projet_jeu/Jeux.dart/Formulaire-creation-jeux.dart';
-import 'package:projet_jeu/Jeux.dart/Game.dart';
+import 'package:projet_jeu/Jeux/formulaire_creation_jeux.dart';
+import 'package:projet_jeu/Jeux/game.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../View/auth_screen.dart';
+
+class Transition extends StatefulWidget {
+  const Transition({super.key});
+
+  @override
+  State<Transition> createState() => _TransitionState();
+}
+
+class _TransitionState extends State<Transition> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: StreamBuilder(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, userSnapshot) {
+        if (userSnapshot.hasData) {
+          return CreateJeux();
+        }
+        return AuthScreen();
+      },
+    ));
+  }
+}
 
 class CreateJeux extends StatelessWidget {
   @override
@@ -37,9 +63,7 @@ class CreateJeux extends StatelessWidget {
       appBar: AppBar(
         title: Text('Accueil du jeu'),
       ),
-      body:
-      
-       ListView(
+      body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
           Card(
@@ -51,7 +75,7 @@ class CreateJeux extends StatelessWidget {
                 // Action lorsque l'utilisateur appuie sur "Jeux en cours"
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>CurrentGamesPage ()),
+                  MaterialPageRoute(builder: (context) => CurrentGamesPage()),
                 );
               },
             ),
@@ -65,7 +89,7 @@ class CreateJeux extends StatelessWidget {
                 // Action lorsque l'utilisateur appuie sur "Créer un nouveau jeu"
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  CreateGamePage()),
+                  MaterialPageRoute(builder: (context) => CreateGamePage()),
                 );
               },
             ),

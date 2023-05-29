@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:projet_jeu/Jeux.dart/GamedetailPage.dart';
-import 'package:projet_jeu/Jeux.dart/Game.dart';
+import 'package:projet_jeu/Jeux/GamedetailPage.dart';
 
-import 'Joindre-jeux.dart';
 
+class Game {
+  final String id;
+  final String name;
+  final String status;
+
+  Game({required this.id, required this.name, required this.status});
+}
 class CurrentGamesPage extends StatelessWidget {
   List<Game> currentGames = [
     Game(id: '1', name: 'Jeu 1', status: 'En cours'),
@@ -11,20 +16,13 @@ class CurrentGamesPage extends StatelessWidget {
     Game(id: '3', name: 'Jeu 3', status: 'En cours'),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Jeux en cours'),
-        
-          ),
-      body: Center(   
-      child: 
-          
-          
-      
-      ListView.builder(
+      ),
+      body: ListView.builder(
         itemCount: currentGames.length,
         itemBuilder: (context, index) {
           return ListTile(
@@ -42,9 +40,6 @@ class CurrentGamesPage extends StatelessWidget {
           );
         },
       ),
-  
-    ),
-      );
-        
+    );
   }
 }
